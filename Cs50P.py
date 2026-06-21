@@ -79,5 +79,22 @@ def print_signals(f_signal):
         print(f"{key} : {value}")
 main()
 
+# dictionary inside the list and for loop inside the for loop
+sensor_network = [
+    {"node_id" : "Alpha_1", "signals" : [45,115,60]},
+    {"node_id": "Beta_2", "signals": [130, 25, 90]} 
+]
+
+for key in sensor_network:
+    print(f"Analyzing node : {key["node_id"]}" )
+    current_signal = key["signals"]
+    for signal_val in current_signal:
+
+        if signal_val > 100:
+            print(f" - Signal {signal_val} Hz: NOISY")
+        else: 
+            print(f" - Signal {signal_val} Hz: CLEAN")
+ 
+    
 
 
