@@ -95,6 +95,29 @@ for key in sensor_network:
         else: 
             print(f" - Signal {signal_val} Hz: CLEAN")
  
+#try, except, else and pass
+
+def main():
+    incoming_signals = ["45", "115", "ERROR_NOCONNECTION", "60", "130"]
+    clean_data = []
+    checking_signals(incoming_signals,clean_data)
+    print_signal(clean_data)
+
+
+def checking_signals(incoming_signals,clean_data):
+    for signal in incoming_signals:
+        try:
+            x = int(signal)
+        except ValueError:
+            pass
+        else:
+            clean_data.append(x)
+
+def print_signal(clean_data):
+    for value in clean_data:
+        print(value)
+
+main()
     
 
 
