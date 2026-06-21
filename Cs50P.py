@@ -52,3 +52,32 @@ def check_Reactor(data):
 
 
 main()
+
+
+#Day2 covered, loops, _, list, dictionary, range funtion, len, none,dictionary inside the list and for loop inside the for loop
+
+def main():
+    raw_signals = [45, 115, 60, 130, 25,25]
+    f_signal = {}
+    signal_classification(raw_signals,f_signal)
+    print_signals(f_signal)
+
+
+def signal_classification(raw_signals,f_signal):
+    for i in range(len(raw_signals)):
+        signal_val = raw_signals[i]
+        keyname = f"Signal_{i+1}"
+        if signal_val > 100:
+            f_signal[keyname] = f"Noisy {signal_val} Hz"
+        elif raw_signals[i] < 100:
+            f_signal[keyname] = f"clean {signal_val} Hz"
+    
+
+def print_signals(f_signal):
+    print("[LOG] Batch Processing Complete:") 
+    for key,value in f_signal.items():
+        print(f"{key} : {value}")
+main()
+
+
+
