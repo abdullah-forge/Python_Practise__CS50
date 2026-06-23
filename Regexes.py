@@ -14,3 +14,15 @@ for number in numbers:
         print("Invalid Number")
         print(number)
 
+#URL Extractor
+
+import re 
+email_body = "Please update your password at https://secure-login.com. Do not visit http://sketchy-site.org/login or www.fake-bank.net!"
+urls = []
+
+if match := re.findall(r"(?:https?://|www\.)[\w./-]+",email_body, re.IGNORECASE):
+    urls.extend(match)
+
+print("All emails in the email body")
+for url in urls:
+    print(url)
