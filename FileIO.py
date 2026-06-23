@@ -25,4 +25,17 @@ with open ("sensor.csv" , "r") as file:
 
 for analytic in sorted(analytics, key = lambda analytic:int(analytic["Temperature"]), reverse=True):
     print(f"{analytic['Sensor_ID']} temperature is {analytic['Temperature']}")
-    
+
+# Pillow Library 
+
+import sys
+from PIL import Image
+
+image = []
+size = 400,400
+
+with Image.open("test_image.jpeg") as im:
+    size_image = im.resize(size)
+    grayscale_image = im.convert("L")
+    grayscale_image.save("ml_ready.jpg")
+
