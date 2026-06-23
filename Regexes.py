@@ -33,3 +33,19 @@ messy_log = "Error_Code: 404!@# System_Temp: 85°C... Rebooting now???"
 
 if match := re.sub(r"[!@#.?]+", "", messy_log):
     print(match)
+
+# color hex code checker
+
+import re
+
+color_codes = ["#BF00FF", "#8A2BE2", "ElectricPurple", "#123", "#GHIJKL", "#000000", "#1234567"]
+codes = []
+
+print("Valid UI Colors:")
+for color in color_codes:
+    if match := re.search(r"^#[0-9a-f]{6}$",color, re.IGNORECASE):
+        codes.append(match.group())
+        #print(match)
+
+for code in codes:
+    print(code)
