@@ -26,3 +26,10 @@ if match := re.findall(r"(?:https?://|www\.)[\w./-]+",email_body, re.IGNORECASE)
 print("All emails in the email body")
 for url in urls:
     print(url)
+
+#Data cleaning basic
+import re
+messy_log = "Error_Code: 404!@# System_Temp: 85°C... Rebooting now???"
+
+if match := re.sub(r"[!@#.?]+", "", messy_log):
+    print(match)
