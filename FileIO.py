@@ -36,6 +36,7 @@ size = 400,400
 
 with Image.open("test_image.jpeg") as im:
     size_image = im.resize(size)
-    grayscale_image = im.convert("L")
+    #grayscale_image = im.convert("L")
+    grayscale_image = size_image.convert("L")
     grayscale_image.save("ml_ready.jpg")
 
