@@ -6,3 +6,5 @@ Day 2: covered, loops, _, list, dictionary, range funtion, len, none,dictionary 
 
 Day 3: the topic covered are random, import, from, packages, statistics, sys, sys.argv, slices, json, request, unit test and  pytest
 
+
+Day 4: file I/O topic covered are open,sorted, txt file, with, wrte ,read, csv ,lambda function, pillow
