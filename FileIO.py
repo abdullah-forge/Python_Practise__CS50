@@ -40,3 +40,34 @@ with Image.open("test_image.jpeg") as im:
     grayscale_image = size_image.convert("L")
     grayscale_image.save("ml_ready.jpg")
 
+# Generating employee ID CARD
+
+from PIL import Image
+import sys
+import csv
+
+keyword = 1
+analytics = []
+match = []
+
+with open("employees.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        analytics.append({"Name" : row["Name"], "Rank" : row["Rank"]})
+        #if int(keyword) in row:
+         #   match.append(row)
+
+
+for analytic in sorted(analytics , key = lambda analytic:int(analytic["Rank"]), reverse= False):
+    print(f"{analytic['Name']} Rank is {analytic['Rank']}")
+    if int(analytic['Rank']) == 1:
+        id_card = Image.new(mode="RGB" , size=(300,500), color = "blue")
+        filename = f"employee_id_{analytic['Name']}.png"
+        id_card.save(filename)
+        print(f"--> Generated ID Card Image: {filename}")
+        match.append(f"ID issued to {analytic['Name']}\n")
+
+        
+with open ("id_issued_logs.txt", "a") as file:
+    file.writelines(match)
+
