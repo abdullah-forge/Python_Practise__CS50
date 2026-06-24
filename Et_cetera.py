@@ -66,3 +66,20 @@ if __name__ == "__main__":
     main()
 
 
+# challenge 6 (Argparse & pyttsx3)
+
+import argparse
+import pyttsx3
+
+parser = argparse.ArgumentParser(description="Terminal Alert Audio Bot")
+parser.add_argument("-m", "--message", type=str, required=True, help="Alert message for the system")
+
+args = parser.parse_args()
+
+print(f"Triggering Audio Alert: {args.message}")
+
+engine = pyttsx3.init()
+engine.say(args.message)
+engine.runAndWait()
+
+
