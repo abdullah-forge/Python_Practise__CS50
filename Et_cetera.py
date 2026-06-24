@@ -18,3 +18,16 @@ def process_payment(amount : float, currency : str) -> bool:
 
 if __name__ == "__main__":
     main()
+
+# challenge 2 (Enumerate and list comprehension)
+
+raw_ips = ["192.168.1.1", "10.0.0.5", "192.168.1.1", "172.16.0.1", "10.0.0.5"]
+
+unique_ips = {*raw_ips}
+#print(unique_ips)
+
+local_ips = [u for u in unique_ips if u.startswith("192")]
+#print(local_ips)
+
+for i, local_ip in enumerate (local_ips):
+    print(i+1,local_ip)
