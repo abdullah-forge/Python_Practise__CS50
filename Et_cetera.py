@@ -25,9 +25,18 @@ raw_ips = ["192.168.1.1", "10.0.0.5", "192.168.1.1", "172.16.0.1", "10.0.0.5"]
 
 unique_ips = {*raw_ips}
 #print(unique_ips)
-
 local_ips = [u for u in unique_ips if u.startswith("192")]
 #print(local_ips)
-
 for i, local_ip in enumerate (local_ips):
     print(i+1,local_ip)
+
+# challenge 3 (*args & kwargs)
+
+def send_to_ai(model_name, *prompts, **configs):
+    print("Using model", model_name)
+    for item in prompts:
+        print(item, end=" ")
+    for name, value in configs.items():
+        print(f"{name} valued {value}")
+
+send_to_ai("Gemini-3", "Analyze this image", "Summarize this log", temperature=0.7, max_tokens=1000)
