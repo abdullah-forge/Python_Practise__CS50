@@ -88,4 +88,23 @@ def main():
 if __name__ == "__main__":
     main()
 
+# task 4 using operator overloading 
 
+class ServerLogs:
+    def __init__(self, ip_tuple):
+        self.ip_tuple = ip_tuple
+    def __add__(self,other):
+        combined_tuples = self.ip_tuple + other.ip_tuple
+        return ServerLogs(combined_tuples)
+    
+    def __str__(self):
+        return f"Aggregated IPs: {self.ip_tuple}"
+    
+def main():
+    serverlogs1 = ServerLogs(("192.168.1.1", "10.0.0.5"))
+    serverlogs2 = ServerLogs(("172.16.0.1",))
+    combined = serverlogs1 + serverlogs2
+    print(combined)
+
+if __name__ == "__main__":
+    main()
