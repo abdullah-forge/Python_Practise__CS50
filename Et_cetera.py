@@ -40,3 +40,14 @@ def send_to_ai(model_name, *prompts, **configs):
         print(f"{name} valued {value}")
 
 send_to_ai("Gemini-3", "Analyze this image", "Summarize this log", temperature=0.7, max_tokens=1000)
+
+# challenge 4 (maps and Filter)
+
+str_amounts = ["500", "1200", "300", "4500", "800"]
+
+int_list = list(map(int, str_amounts))
+print(int_list)
+
+result = list(filter(lambda x: x >1000 , int_list))
+print(result)
+
