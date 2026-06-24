@@ -8,3 +8,6 @@ Day 3: the topic covered are random, import, from, packages, statistics, sys, sy
 
 
 Day 4: file I/O topic covered are open,sorted, txt file, with, wrte ,read, csv ,lambda function, pillow, Regexes, := (walrus operator)
+
+
+Day 5: The topics covered are, getter, setter, operator overloading, inheritance, class method, decorators, raise, tuple
