@@ -108,3 +108,45 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+#challenge 5 combinationation of all problems 
+
+class BaseAPI:
+    total_calls = 0
+    @classmethod
+    def record_call(cls):
+        cls.total_calls += 1
+    
+class UserEndpoint(BaseAPI):
+    def __init__(self,key):
+        BaseAPI.record_call()
+        self.api_key = key
+
+    @property
+    def api_key(self):
+        #self._key = key
+        return f"sk-****{self._key[-4:]}"
+
+
+    @api_key.setter
+    def api_key(self, key):
+        if not key.startswith("sk-"):
+            raise TypeError("Invalid API Key Format")
+        self._key = key
+
+
+def main():
+    user1 = UserEndpoint("sk-ab12cd34ef5678")
+    print(f"User 1 Key: {user1.api_key}")
+    
+    user2 = UserEndpoint("sk-xyz9876abc1122")
+    print(f"User 2 Key: {user2.api_key}")
+
+    print(f"Total API Calls Made: {BaseAPI.total_calls}")
+
+    print("Testing Security Guard...")
+    hacker = UserEndpoint("fake-key-123") 
+
+if __name__ == "__main__":
+    main()
