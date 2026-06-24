@@ -51,3 +51,18 @@ print(int_list)
 result = list(filter(lambda x: x >1000 , int_list))
 print(result)
 
+# Challenge 5 (Generators - yield)
+
+def main():
+    logs = generate_massive_logs(5)
+    for log in logs:
+        print(log)
+
+def generate_massive_logs(limit):
+    for i in range(limit):
+        yield f"Log line {i} processed"
+
+if __name__ == "__main__":
+    main()
+
+
