@@ -57,3 +57,35 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#Challenge 3 Threat log
+
+class ThreatLog:
+    def __init__(self,ip_address,timestamp):
+        self.ip_address = ip_address
+        self.timestamp = timestamp
+    def print_log(self):
+        print(f"{self.ip_address} is in {self.timestamp}")
+
+class PhishingAttack(ThreatLog):
+    def __init__(self,ip_address, timestamp,malicious_url):
+        super().__init__(ip_address, timestamp)
+        #super().__init__(timestamp)
+        self.malicious_url = malicious_url
+    def print_log(self):
+        super().print_log()
+        print(f"Action: Blocked malicious URL -> {self.malicious_url}")
+
+def main():
+    threatLog = ThreatLog("192.168.1.50", "2026-06-24 15:00:00")
+    print("--Basic Log--")
+    threatLog.print_log()
+
+    phishingAttack = PhishingAttack("10.0.0.5", "2026-06-24 15:05:00", "http://fake-bank-login.com")
+    print("\n--- Phishing Log ---")
+    phishingAttack.print_log()
+
+if __name__ == "__main__":
+    main()
+
+
