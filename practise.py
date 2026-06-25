@@ -67,5 +67,11 @@ def say_hello():
 
 if __name__ == "__main__":
    say_hello()
-       
+
+# challenge 6
+temps_c = [0, 25, 30, 40, 100]
+
+f_list = list(map(lambda c: (c * 9/5) + 32, temps_c))
+
+print(f_list)
         
