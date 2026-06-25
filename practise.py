@@ -114,3 +114,13 @@ def generate_even_numbers(limit):
 
 if __name__ == "__main__":
     main()
+
+# challenge 10
+
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--port", type=int, default=8000, help="Port number for the server")
+args = parser.parse_args()
+
+print(f"Server running on port {args.port}")
