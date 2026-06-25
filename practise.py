@@ -53,3 +53,19 @@ def calculate_discount(price, discount):
 
 if __name__ == "__main__":
     main()
+#challenge 5
+def my_decorators(func):
+    def wrapper():
+      print("API Endpoint Called!.")
+      func()
+    return wrapper
+
+
+@my_decorators
+def say_hello():
+   print("Hello!")
+
+if __name__ == "__main__":
+   say_hello()
+       
+        
