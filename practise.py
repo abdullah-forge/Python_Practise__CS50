@@ -34,3 +34,22 @@ def student_detail(name, registration_id):
 if __name__ == "__main__":
     main()
 
+
+#challenge 4
+def main():
+    price = input("Enter the Price: ")
+    discount = input("Enter the discount: ")
+    calculate_discount(price, discount)
+
+def calculate_discount(price, discount):
+    try:
+        price = int(price)
+        discount = int(discount)
+    except ValueError:
+        print("Invalid input: Numbers only.")
+    else:
+        final_price = price - discount
+        print(f"Final Price is {final_price}")
+
+if __name__ == "__main__":
+    main()
