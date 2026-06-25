@@ -74,4 +74,19 @@ temps_c = [0, 25, 30, 40, 100]
 f_list = list(map(lambda c: (c * 9/5) + 32, temps_c))
 
 print(f_list)
-        
+
+#challenge 7
+
+t_word = "ERROR"
+count = 0
+
+with open ("server_logs.txt", "r") as file:
+    for line in file:
+        #words = line.split()
+        #for word in line:
+        if t_word in line:
+            count +=1
+
+print("Total Error count in file is : ", count)
+
+
