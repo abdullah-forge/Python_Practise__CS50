@@ -90,3 +90,13 @@ with open ("server_logs.txt", "r") as file:
 print("Total Error count in file is : ", count)
 
 
+#challenge 8
+
+import re
+
+password = input("Enter the password: ")
+
+if len(password) >= 8 and re.search(r"\d", password):
+    print("Strong password!!")
+else:
+    print("Weak password!!")
