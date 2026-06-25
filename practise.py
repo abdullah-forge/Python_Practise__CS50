@@ -100,3 +100,17 @@ if len(password) >= 8 and re.search(r"\d", password):
     print("Strong password!!")
 else:
     print("Weak password!!")
+
+# challenge 9
+def main():
+    number = int(input("Enter number : "))
+    for num in generate_even_numbers(number):
+        print(num)
+
+def generate_even_numbers(limit):
+    for i in range(limit + 1):
+        if i % 2 == 0:
+            yield i
+
+if __name__ == "__main__":
+    main()
