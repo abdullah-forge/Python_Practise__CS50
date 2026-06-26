@@ -36,3 +36,14 @@ bill1 = calculate_bill(100, 250, 50)
 print(f"Bill 1: {bill1}")
 bill2 = calculate_bill(100, 250, 50, discount=20)
 print(f"Bill 2: {bill2}")
+
+# challenge 4
+
+def square_gen(limit):
+    for n in range(1, limit + 1):
+        yield n * n
+
+x = int(input("Enter any number: "))
+
+for index, square in enumerate(square_gen(x)):
+    print(f"Index {index+1}: Square {square}")
