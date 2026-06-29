@@ -47,3 +47,17 @@ x = int(input("Enter any number: "))
 
 for index, square in enumerate(square_gen(x)):
     print(f"Index {index+1}: Square {square}")
+
+
+# Challenge 5
+# Extract phone numbers using Regular Expressions
+
+import re
+
+text = "Contact us at +92-3141679454 or 03001234567 for more information."
+
+pattern = r"(\+92-\d{10}|03\d{9})"
+
+numbers = re.findall(pattern, text)
+
+print("Phone Numbers:", numbers)
