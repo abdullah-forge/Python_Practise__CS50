@@ -61,3 +61,24 @@ pattern = r"(\+92-\d{10}|03\d{9})"
 numbers = re.findall(pattern, text)
 
 print("Phone Numbers:", numbers)
+
+# Challenge 6
+# Generator + *args + **kwargs
+
+def cube_generator(limit):
+    for i in range(1, limit + 1):
+        yield i ** 3
+
+def calculate_total(*args, **kwargs):
+    total = sum(args)
+    tax = kwargs.get("tax", 0)
+    return total + tax
+
+n = int(input("Enter limit: "))
+
+print("\nCube Numbers:")
+for index, cube in enumerate(cube_generator(n), start=1):
+    print(f"Index {index}: Cube {cube}")
+
+total = calculate_total(200, 300, 150, tax=50)
+print("\nFinal Amount:", total)
