@@ -11,7 +11,6 @@ def Format_profile(data):
     height = parts[1].strip()
     clean_height = round(float(height),2)
     return f"Name : {Name}, height : {clean_height}"
-
 main()
 
 # cover topics are _, match, conditionals (if,elif,else, or and not )
@@ -49,7 +48,6 @@ def check_Reactor(data):
             status = "Shut down"
             state = "Critical"
     return f"{state}, {core_id} Temp: {temp}C -> {status}"
-
 
 main()
 
@@ -116,7 +114,6 @@ def checking_signals(incoming_signals,clean_data):
 def print_signal(clean_data):
     for value in clean_data:
         print(value)
-
 main()
     
 
